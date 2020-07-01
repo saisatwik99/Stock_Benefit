@@ -11,10 +11,12 @@ Thus, enabling them to intelligently invest their savings and make good profits.
 To be updated soon..
 # Implementation
 To be updated soon..
-# Any Queries
-In case of any queries, you can contact any of us.
+# Support
+If you have questions about the Project or just want to interact, you can contact us.
 - [Sai Satwik](https://linkedin.com/in/sai-satwik-bb390018b)
 - [Aravind Challa](https://linkedin.com/in/aravindchalla)
-- [Sathwik Veeramaneni](https://linkedin.com/in/sathwik-veeramaneni-729430192)
+- [Sathwik Veeramaneni](https://linkedin.com/in/sathwik-veeramaneni-729430192) <br>
 
+
+Don't forget that we are open to suggestions, extensions or adaptations. Feel free to discuss or propose new ideas for projects!
 
