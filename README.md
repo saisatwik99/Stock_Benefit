@@ -12,7 +12,7 @@ To be updated soon..
 # Implementation
 To be updated soon..
 # Any Queries
-In case of any queries, you can contact either of us.
+In case of any queries, you can contact any of us.
 - [Sai Satwik](https://linkedin.com/in/sai-satwik-bb390018b)
 - [Aravind Challa](https://linkedin.com/in/aravindchalla)
 - [Sathwik Veeramaneni](https://linkedin.com/in/sathwik-veeramaneni-729430192)
