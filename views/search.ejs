@@ -1,0 +1,13 @@
+<h1>Search for a Stock!!!</h1>
+<form action="/results" method="GET">
+    <input type="text" placeholder="Search for a stock" name="search">
+    <!-- <input type="submit"> -->
+
+    <label for="Type">Choose a Type:</label>
+    <select id="Type" name="type">
+      <option value="TIME_SERIES_DAILY">Day</option>
+      <option value="TIME_SERIES_WEEKLY">Week</option>
+      <option value="TIME_SERIES_MONTHLY">Month</option>
+    </select>
+    <input type="submit">
+</form>
