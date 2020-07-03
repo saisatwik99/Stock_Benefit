@@ -1,2 +1,12 @@
 <h1>This is WatchList</h1>
 
+<% watchlist.forEach(function(watchlist){%>
+    <div>
+        
+        <a href= "<%= "/results?search=" + watchlist.name +"&type=TIME_SERIES_DAILY" %>" > <%=watchlist.name%> </a>
+    </div>
+    <form action="/watchlist?_method=DELETE" method="POST">
+        <button name="<%=watchlist.name%>">DELETE</button>
+    </form>
+<% });%>
+
