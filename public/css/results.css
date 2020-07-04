@@ -1,0 +1,46 @@
+
+h1{
+    color: #18D26E;
+}
+h2{
+    color: #18d26e;
+}
+table.green {
+  border: 4px solid #000000;
+  background-color: #555555;
+  width: 600px;
+  height: 280px;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.green td, table.green th {
+  border: 1px solid #180a68;
+  padding: 5px 2px;
+  text-align: center;
+}
+table.green tbody td {
+  font-size: 13px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+table.green tr:nth-child(even) {
+  background: #18D26E;
+}
+table.green thead {
+  background: #18D26E;
+  border-bottom: 4px solid #000000;
+}
+table.green thead th {
+  font-size: 19px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #000000;
+}
+table.green thead th:first-child {
+  border-left: none;
+}
+button{
+    color: #18D26E;
+    background-color: rgb(10, 10, 10);
+}
