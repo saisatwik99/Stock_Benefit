@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <title>Stock Benefit</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+  
+    <!-- Favicons -->
+    <link href="/img/favicon.jpg" rel="icon">
+    <link href="/img/apple-touch-icon.jpg" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  
+    <!-- Bootstrap CSS File -->
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+    <!-- Libraries CSS Files -->
+    <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    
+    <!-- Main Stylesheet File -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/results.css">       
+   </head> 
+    <body>
+        <header id="header">
+            <div class="container-fluid">
+        
+              <div id="logo" class="pull-left">
+                <h1><a href="#intro" class="scrollto">Stock Benefit</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+              </div>
+        
+              <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                  <li><a href="/homenew">Home</a></li>
+                  <li class="menu-active"><a href="/search">SEARCH</a></li>
+                  <li><a href="#team">LOGIN</a></li>
+                  <li><a href="#contact">SIGN UP</a></li>
+                </ul>
+              </nav><!-- #nav-menu-container -->
+            </div>
+        </header>
+        <h1 class="myresult"><b><u><%=query%> -- <%=y%></u></b></h1>
+        <div class="table">
+        <table class="green">
+            <thead>
+            <tr>
+            <th>KEYDATA</th>
+            <th>VALUE</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+            <td colspan="2">
+            </td>
+            </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>Opening Value</td>
+                    <td><%= data["1. open"] %></td>
+                </tr>
+                <tr>
+                    <td>High Value</td>
+                    <td><%=data["2. high"]%></td>
+                </tr>
+                <tr>
+                    <td>Low Value</td>
+                    <td><%=data["3. low"]%></td>
+                </tr>
+                <tr>
+                    <td>Closing Value</td>
+                    <td><%=data["4. close"]%></td>
+                </tr>
+                <tr>
+                    <td>volume</td>
+                    <td><%=data["5. volume"]%></td>
+                </tr>
+            
+            </tbody>
+            </table>    
+        </div>
+        <button>Add to watch List</button>
+    </body>
+</html>

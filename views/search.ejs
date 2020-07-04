@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+    <meta charset="utf-8">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <style>
+      body{
+      margin:0;
+      padding:0;
+      }
+      
+      .search-box{
+      position:absolute;
+      top:45%;
+      left:50%;
+      transform:  translate(-50%,-50%);
+      background:#2f3640;
+      height:50px;
+      border-radius:25px;
+      padding:7px;
+      width:550px;
+    }
+      
+    /* .search-btn:hover{
+      background:white;
+      } */
+      ::placeholder {
+        color: white;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 21px;
+      }
+
+      select#type{
+      padding-left: 24px;
+      padding-bottom: 8px;
+      font-family: 'Roboto Mono', monospace;
+      }
+
+      input[type="text"]
+    {
+      font-family: 'Roboto Mono', monospace;
+      color: orange;
+    }
+
+      select option{
+        font-family: 'Roboto Mono', monospace;
+      }
+
+      select:active, select:hover {
+      outline-color: none;
+      }
+      button.btn{
+        color:#18d26e;
+        float:right;
+        display:flex;
+        align-items:center;
+        padding: 6px 0px;
+       }
+
+       button.btn svg{
+        width: 22px;
+        height: 22px;
+       }
+       button.btn:hover {
+        background-color: whitesmoke;
+      }
+
+
+
+      .search-btn{
+      color:#18d26e;
+      width:30px;
+      height:25px;
+      border-radius:50%;
+      background:#2f3640;
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      float:right;
+      }
+      .search-btn svg{
+        padding-top: 10px;
+        padding-bottom: 2px;
+        padding-left: 3px;
+        padding-right: 5px;
+        width: 36px;
+        height: 36px;
+        fill: #222;
+      }
+      .svg-inline--fa.fa-w-16{
+        width: 25px;
+      }
+      .search-txt{
+      border:none;
+      background-color: #2f3640;
+      outline:none;
+      padding-left: 12px;
+      padding-top: 2px;
+      padding-bottom: 0px;
+      padding-right: 2px;
+      height: 35px;
+      color:   white;
+      font-size:26px;
+      float:left;
+      transition:0.4s;
+      line-height:40px;
+      width:65%;
+      }
+    </style>
+    <title>Stock Benefit</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+  
+    <!-- Favicons -->
+    <link href="img/favicon.jpg" rel="icon">
+    <link href="img/apple-touch-icon.jpg" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+    <!-- Libraries CSS Files -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/search.css">
+   </head>
+  <body>
+    <header id="header">
+      <div class="container-fluid">
+  
+        <div id="logo" class="pull-left">
+          <h1><a href="#intro" class="scrollto">Stock Benefit</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+        </div>
+  
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            <li><a href="/homenew">Home</a></li>
+            <li class="menu-active"><a href="/search">SEARCH</a></li>
+            <li><a href="#team">LOGIN</a></li>
+            <li><a href="#contact">SIGN UP</a></li>
+          </ul>
+        </nav><!-- #nav-menu-container -->
+      </div>
+    </header>
+
+    
+    <form action="/results" method="GET"> 
+      <div class="search-box">
+        <input class="search-txt" type="text" name="search" placeholder="What are you looking for?">
+          <!-- <a class="search-btn" href="#">
+          <i class="fas fa-search"></i>      
+          </a> -->
+          <button class="btn"><i class="fas fa-search"></i></button>
+      </div>
+        
+      <div class="select">
+        <select id="type" name="type">
+          <option id="day" value="TIME_SERIES_DAILY">Day</option>
+          <option id="week" value="TIME_SERIES_WEEKLY">Week</option>
+          <option id="month" value="TIME_SERIES_MONTHLY">Month</option>
+        </select>
+      </div>
+    </form>
+
+<main id="main">
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+</body>
+</html>
