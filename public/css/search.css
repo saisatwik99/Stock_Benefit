@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+body{
+    background-image: url("/img/results.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.mystyle{
+    position:absolute;
+    color: aliceblue;  
+    top:25%;
+    left:50%;
+    transform:  translate(-50%,-50%);
+    font-size: 45px;  
+}
+select{
+    background-color: #2f3640;
+    position:absolute;
+    top:45%;
+    left:62%;
+    height: 50px;
+    width: 100px;
+    position:absolute;
+    border-radius:40px;
+    border-color: aliceblue;
+    padding:5px;
+    color: aliceblue;
+    transform:  translate(-50%,-50%);
+    border-radius:36px;
+    display:inline-block;
+    overflow:hidden;
+    font-size: 20px;
+}
+
