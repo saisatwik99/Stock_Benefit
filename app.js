@@ -171,6 +171,7 @@ app.post("/addtowatchlist",isLoggedIn,function(req,res){
 app.delete("/watchlist", function(req,res){
     currentUser = req.user["username"];
     var name = Object.keys(req.body)[0];
+    console.log(name);
     // Watchlist.findOne({"name":name}, function(err,watchlist){
     //     if(err)
     //     {
@@ -186,26 +187,20 @@ app.delete("/watchlist", function(req,res){
     //         });
     //     }
     // })
-    User.findOne({username:currentUser}).populate("stocks").exec(function(err, user){
+    User.findOne({username:currentUser}).populate("stocks").exec(function(err, foundUser){
         if(err){
             console.log(err);
         } else {
-            console.log(user.stocks);
-            // user.stocks.findOne({"name":name}, function(err,watchlist){
-            //         if(err)
-            //         {
-            //             res.send("err");
-            //         }else {
-            //             id = watchlist._id;
-            //             user.stocks.findByIdAndDelete(id,function(err){
-            //                 if(err){
-            //                     res.redirect("/watchlist");
-            //                 }else{
-            //                     res.redirect("/watchlist");
-            //                 }
-            //             });
-            //         }
-            //     })
+            foundUser.update(
+                { $pull: { stocks: name } },function(err){
+                    if(err){
+                        res.redirect("/watchlist");
+                    }
+                    else{
+                        res.redirect("/watchlist");
+                    }
+                }
+              );
         }
     });
 
