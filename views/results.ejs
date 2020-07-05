@@ -41,8 +41,9 @@
         
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                  <li><a href="/homenew">Home</a></li>
+                  <li><a href="/">Home</a></li>
                   <li><a href="/search">SEARCH</a></li>
+                  <li><a href="/watchlist">WATCHLIST</a></li>
                   <% if(!currentUser){ %>
                     <li><a href="/login">LOGIN</a></li>
                     <li><a href="/register">SIGN UP</a></li>
@@ -56,7 +57,7 @@
         </header>
         <h1 class="myresult"><b><u><%=query%> -- <%=y%></u></b></h1>
         <div class="table">
-        <table class="green">
+        <table class="green" style="left: 30%;">
             <thead>
             <tr>
             <th style="background-color: limegreen;">KEYDATA</th>
@@ -64,27 +65,23 @@
             </tr>
             </thead>
             <tfoot>
-            <tr>
-            <td colspan="2">
-            </td>
-            </tr>
             </tfoot>
             <tbody>
                 <tr>
                     <td style="background-color: red;">Opening Value</td>
-                    <td style="background-color: red;"><%= data["1. open"] %></td>
+                    <td style="background-color: red;">$<%= data["1. open"] %></td>
                 </tr>
                 <tr>
                     <td style="background-color: limegreen;">High Value</td>
-                    <td style="background-color: limegreen;"><%=data["2. high"]%></td>
+                    <td style="background-color: limegreen;">$<%=data["2. high"]%></td>
                 </tr>
                 <tr>
                     <td style="background-color: red;">Low Value</td>
-                    <td style="background-color: red;"><%=data["3. low"]%></td>
+                    <td style="background-color: red;">$<%=data["3. low"]%></td>
                 </tr>
                 <tr>
                     <td style="background-color: limegreen;">Closing Value</td>
-                    <td style="background-color: limegreen;"><%=data["4. close"]%></td>
+                    <td style="background-color: limegreen;">$<%=data["4. close"]%></td>
                 </tr>
                 <tr>
                     <td style="background-color: red;">volume</td>
@@ -95,7 +92,7 @@
             </table>    
         </div>
         <form action = "/addtowatchlist" method="POST">
-            <button style="top: 460px;" name ="<%=query%>">Add to WatchList</button>
+            <button style="top: 476px; left: 45%;" name ="<%=query%>">Add to WatchList</button>
         </form>
     </body>
 </html>
