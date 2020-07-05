@@ -43,7 +43,7 @@ In case, you want to download the code from our repo and watch things locally, y
 * You can install the required modules using **npm install modulename --save**
 * You can go through all the modules we useed in the package.json file.
 # Tests/Exception Handling
-- The exception case was what if the user searches for a keyword that is not a part of API. Then wee came up with a solution of showing a page of **NO RESULT**
+- The exception case was what if the user searches for a keyword that is not a part of API. Then we came up with a solution of showing a page of **NO RESULT**
 ![No result Page](/images/noresultpage.png "No-result Page")
 # Support
 If you have questions about the Project or just want to interact, you can contact us.
