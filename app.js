@@ -13,7 +13,8 @@ const { Passport } = require("passport");
 
 
 
-mongoose.connect("mongodb://localhost:27017/newwatchlist", {useUnifiedTopology: true, useNewUrlParser: true});
+mongoose.connect("mongodb+srv://stockbenefit:stockbenefit@cluster0.gl7nr.mongodb.net/<dbname>?retryWrites=true&w=majority", {useUnifiedTopology: true, useNewUrlParser: true});
+//mongoose.connect("mongodb://localhost:27017/newwatchlist", {useUnifiedTopology: true, useNewUrlParser: true});
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
@@ -86,15 +87,17 @@ app.post("/login", passport.authenticate("local",
 });
 //=================================================================================================================
 app.get("/",function(req,res){
-    res.render('homenew.ejs');
+    currentUser = req.user;
+    res.render('homenew.ejs', {currentUser: currentUser});
 });
 
 app.get("/search", function(req, res) {
     // console.log(req.user["username"]);
-    res.render("search");
+    currentUser = req.user;
+    res.render("search", {currentUser: currentUser});
 });
 
-app.get("/watchlist", function(req,res){
+app.get("/watchlist",isLoggedIn, function(req,res){
     // Watchlist.find({}, function(err, watchlist){
     //     if(err){
     //         console.log(err);
@@ -103,14 +106,12 @@ app.get("/watchlist", function(req,res){
     //     }
     // })
     currentUser = req.user["username"];
-    console.log(currentUser);
     User.findOne({username:currentUser}).populate("stocks").exec(function(err, user){
         if(err){
             console.log(err);
         } else {
             
             watchlist = user["stocks"];
-            console.log(watchlist);
             res.render("watchlist", {watchlist:watchlist});
         }
     });
@@ -119,7 +120,7 @@ app.get("/watchlist", function(req,res){
 app.get("/results", function(req, res) {
     var query = req.query.search;
     var type = req.query.type;
-
+    currentUser = req.user;
     if (type=="TIME_SERIES_DAILY") {
         var x ="Time Series (Daily)"
         var y ="Today"
@@ -134,9 +135,20 @@ app.get("/results", function(req, res) {
     request(url, function(error, response, body) {
         if(!error && response.statusCode == 200) {
             var data = JSON.parse(body);
-            res.render("results",{query:query, data:data[x][Object.keys(data[x])[0]], y:y });
+
+            if (typeof data["Error Message"] !== "undefined" ){
+                // Error
+                res.render("notfound",{currentUser:currentUser});
+            }
+            else {
+                // correct API
+                res.render("results",{query:query, data:data[x][Object.keys(data[x])[0]], y:y, currentUser:currentUser });
+            }
+
+
         } else {
-            showErr(error);
+            // showErr(error);
+            res.render("notfound",{currentUser:currentUser});
         }
     });
 });
@@ -171,27 +183,11 @@ app.post("/addtowatchlist",isLoggedIn,function(req,res){
 app.delete("/watchlist", function(req,res){
     currentUser = req.user["username"];
     var name = Object.keys(req.body)[0];
-    console.log(name);
-    // Watchlist.findOne({"name":name}, function(err,watchlist){
-    //     if(err)
-    //     {
-    //         res.send("err");
-    //     }else {
-    //         id = watchlist._id;
-    //         Watchlist.findByIdAndDelete(id,function(err){
-    //             if(err){
-    //                 res.redirect("/watchlist");
-    //             }else{
-    //                 res.redirect("/watchlist");
-    //             }
-    //         });
-    //     }
-    // })
     User.findOne({username:currentUser}).populate("stocks").exec(function(err, foundUser){
         if(err){
             console.log(err);
         } else {
-            foundUser.update(
+            foundUser.updateOne(
                 { $pull: { stocks: name } },function(err){
                     if(err){
                         res.redirect("/watchlist");
@@ -219,7 +215,9 @@ function isLoggedIn(req, res, next){
     res.redirect("/login");
 }
 
-app.listen(3000,function()
-{
-    console.log("Severed Started");
-});
+// app.listen(3000,function()
+// {
+//     console.log("Severed Started");
+// });
+
+app.listen(process.env.PORT,process.env.IP);

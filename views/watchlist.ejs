@@ -1,12 +1,121 @@
-<h1>This is WatchList</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Stock Benefit</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
 
-<% watchlist.forEach(function(watchlist){%>
-    <div>
-        
-        <a href= "<%= "/results?search=" + watchlist.name +"&type=TIME_SERIES_DAILY" %>" > <%=watchlist.name%> </a>
+  <!-- Favicons -->
+  <link href="/watchlist/img/favicon.png" rel="icon">
+  <link href="/watchlist/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Chewy&family=Fredoka+One&family=Merienda+One&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="/watchlist/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="/watchlist/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/watchlist/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/watchlist/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="/watchlist/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/watchlist/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="/watchlist/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: BizPage
+    Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="/" class="scrollto"  style="font-family: 'Abril Fatface';">STOCK BENEFIT</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container" class="navbar-dark">
+        <ul class="nav-menu">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/search">SEARCH</a></li>
+          <li class="menu-active"><a href="/watchlist">WATCHLIST</a></li>
+          <% if(!currentUser){ %>
+            <li><a href="/login">LOGIN</a></li>
+            <li><a href="/register">SIGN UP</a></li>
+          <% } else { %>
+            <li><a href="/logout">LOGOUT</a></li>
+          <% } %>
+        </ul>
+      </nav><!-- #nav-menu-container -->
     </div>
-    <form action="/watchlist?_method=DELETE" method="POST">
-        <button name="<%=watchlist.name%>">DELETE</button>
-    </form>
-<% });%>
+  </header><!-- #header -->
 
+  <div class="container cont">
+    <h1 style="font-family: 'Fredoka One', cursive; color: aliceblue;">WATCHLIST</h1>
+    <div class="row">
+
+      <% watchlist.forEach(function(watchlist){%>
+          <div class="column">
+            <div class="card" style="top: 30px; margin: 6.66%; border-color: #18D26E; border-width: 8px;">
+                <div>
+                  <a style="font-family: 'Alfa Slab One', cursive; color: blue; font-size: 30px;" href= "<%= "/results?search=" + watchlist.name +"&type=TIME_SERIES_DAILY" %>" > <%=watchlist.name%> </a>
+                  </div>
+                  <form action="/watchlist?_method=DELETE" method="POST">
+                    <button class="btn btn-outline-danger" name="<%=watchlist._id%>">DELETE</button>
+                </form>
+              </div>
+          </div>
+      <% });%>     
+    </div>   
+  </div>
+    
+  
+
+ 
+  
+  
+
+  <main id="main">
+
+  
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- JavaScript Libraries -->
+  <script src="/watchlist/lib/jquery/jquery.min.js"></script>
+  <script src="/watchlist/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/watchlist/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/watchlist/lib/easing/easing.min.js"></script>
+  <script src="/watchlist/lib/superfish/hoverIntent.js"></script>
+  <script src="/watchlist/lib/superfish/superfish.min.js"></script>
+  <script src="/watchlist/lib/wow/wow.min.js"></script>
+  <script src="/watchlist/lib/waypoints/waypoints.min.js"></script>
+  <script src="/watchlist/lib/counterup/counterup.min.js"></script>
+  <script src="/watchlist/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="/watchlist/lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="/watchlist/lib/lightbox/js/lightbox.min.js"></script>
+  <script src="/watchlist/lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+
+  <!-- Template Main Javascript File -->
+  <script src="/watchlist/js/main.js"></script>
+
+</body>
+</html>
