@@ -41,9 +41,10 @@ In case, you want to download the code from our repo and watch things locally, y
 * Open node command prompt and go to the directory of this downloaded Stock_Benefit folder.
 * Use **npm init** to initialise npm
 * You can install the required modules using **npm install modulename --save**
-* You can go through all the modules we useed in the package.json file.
+* You can go through all the modules we used in the package.json file.
 # Tests/Exception Handling
-- The exception case was what if the user searches for a keyword that is not a part of API. Then we came up with a solution of showing a page of **NO RESULT**
+- The exception case was what if the user searches for a stock name that is not a stock symbol. Then we came up with a solution of showing a page of **NO RESULT** <br>
+ For example- The stock symbol for Google is GOOG. It shows this **NO RESULT** page if you search for a stock name of Google instead of GOOG.
 ![No result Page](/images/noresultpage.png "No-result Page")
 # Support
 If you have questions about the Project or just want to interact, you can contact us.
