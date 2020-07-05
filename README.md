@@ -1,7 +1,7 @@
 # Stock_Benefit
 * Stock Benefit is an app that shows share price of stocks which the user wishes to know and invest. <br> <br>
   **Link to the Web App-** https://afternoon-bayou-02898.herokuapp.com/ <br>
-  FOR NOW- Search for a stock with exact stock name- like for google, their stock name is **"GOOG".**
+  FOR NOW- Search for a stock with exact stock name- like for google, their stock name is **"GOOG".** <br>
   **You are advised-** to open the link in a PC/Laptop for better User experience and Design as only beginning part of the web App is responsive whereas the rest is not ( as the app has been constructed in a very less time ). <br>
   **You are also advised-** to read this entire readme file to understand the importance and efficiency of the app and hurdles faced during the journey. 
 
@@ -22,19 +22,19 @@
 - The stock prices are shown with statistics of daily, weekly and monthly basis. Thus, giving a broad overview to the user whether to invest in a particular stock or not.
 - Separate User login for different users helping them have an eye on their interested stocks. 
 # Implementation
-* HOME PAGE- A good looking scrolling home page is designed with good stock related suggestions and quotes.
+* **HOME PAGE-** A good looking scrolling home page is designed with good stock related suggestions and quotes.
 ![Home Page](/images/homepage.png "Home Page")
-* SEARCH PAGE- A user can search for his stock to analyse and later invest.
+* **SEARCH PAGE-** A user can search for his stock to analyse and later invest.
 ![Search Page](/images/searchpage.png "Search Page")
-* RESULTS PAGE- The price of that particular stock user searches appears here as a result.
-![Results Page](/images/resultspage.png "Results Page")
-* LOGIN PAGE- If the user wishes to add the stock to his watchlist the user is asked to login.
+* **RESULTS PAGE-** The price of that particular stock user searches appears here as a result.
+![Results Page](/images/resultpage.png "Results Page")
+* **LOGIN PAGE-** If the user wishes to add the stock to his watchlist the user is asked to login.
 ![Login Page](/images/loginpage.png "Login Page")
-* SIGNUP PAGE- If the user is a new user, the user is asked to sign up and then login.
+* **SIGNUP PAGE-** If the user is a new user, the user is asked to sign up and then login.
 ![Signup Page](/images/signuppage.png "Signup Page")
-* WATCHLIST PAGE- The stock is now added to your watchlist and watch it as frequently as the userr wishes to.
+* **WATCHLIST PAGE-** The stock is now added to your watchlist and watch it as frequently as the userr wishes to.
 ![Watchlist Page](/images/watchlistpage.png "Watchlist Page")
-* **Local Implementation**
+* **Local Implementation** <br>
 In case, you want to download the code from our repo and watch things locally, you are first advised to
 * install node and mongo
 * Then create and use your local data base.(Since, we used a cloud based server- Mongo Atlas)
