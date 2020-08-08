@@ -1,6 +1,6 @@
 # Stock_Benefit
 * Stock Benefit is an app that shows share price of stocks which the user wishes to know and invest. <br> <br>
-  **Link to the Web App-** https://afternoon-bayou-02898.herokuapp.com/ <br>
+  **Link to the Web App-** https://stockbenefit.herokuapp.com/ <br>
   FOR NOW- Search for a stock with exact stock name- like for google, their stock name is **"GOOG".** <br>
   **You are advised-** to open the link in a PC/Laptop for better User experience and Design as only beginning part of the web App is responsive whereas the rest is not ( as the app has been constructed in a very less time ). <br>
   **You are also advised-** to read this entire readme file to understand the importance and efficiency of the app and hurdles faced during the journey. 
